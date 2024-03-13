@@ -36,8 +36,8 @@ public class PessoaLaboratorioServiceImpl implements PessoaLaboratorioService {
     }
 
     @Override
-    public List<PessoaLaboratorioDTO> buscar(LocalDate dtInicio, LocalDate dtFim, String texto) {
-        List<PessoaLaboratorioEntity> x =  pessoaLaboratorioRepository.buscar();
+    public List<PessoaLaboratorioDTO> buscar(LocalDate dtInicio, LocalDate dtFim, String texto, Long quantidade) {
+        List<PessoaLaboratorioEntity> x =  pessoaLaboratorioRepository.buscar(dtInicio, dtFim, texto, quantidade);
         return x
                 .stream()
                 .map(it -> modelMapper.map(it, PessoaLaboratorioDTO.class))

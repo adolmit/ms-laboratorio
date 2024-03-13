@@ -13,5 +13,6 @@ public interface PessoaLaboratorioService {
     public List<PessoaLaboratorioDTO> listarTodos();
     public List<PessoaLaboratorioDTO> buscar(LocalDate dtInicio,
                                              LocalDate dtFim,
-                                             String texto);
+                                             String texto,
+                                             Long quantidade);
 }

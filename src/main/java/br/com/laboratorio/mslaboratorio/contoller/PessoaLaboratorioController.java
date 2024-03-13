@@ -32,8 +32,9 @@ public class PessoaLaboratorioController {
                                              LocalDate dtInicio,
                                              @RequestParam(name="dtFim",required=false)
                                              LocalDate dtFim,
-                                             @RequestParam(name="texto",required=false) String texto
-                                             ) {
-        return pessoaLaboratorioService.buscar(dtInicio, dtFim, texto);
+                                             @RequestParam(name="texto",required=false) String texto,
+                                             @RequestParam(name="quantidade") Long quantidade
+    ) {
+        return pessoaLaboratorioService.buscar(dtInicio, dtFim, texto, quantidade);
     }
 }
