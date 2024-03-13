@@ -14,13 +14,10 @@ import java.util.stream.Collectors;
 public class PropriedadeServiceImpl implements PropriedadeService {
     @Autowired
     private PropriedadeRepository propiedadeRepository;
-
-    private ModelMapper modelMapper;
+    ModelMapper modelMapper = new ModelMapper();
 
     @Override
     public List<PropriedadeDTO> listarTodos() {
-        ModelMapper modelMapper = new ModelMapper();
-
         return propiedadeRepository.findAll()
                 .stream()
                 .map(it -> modelMapper.map(it, PropriedadeDTO.class))

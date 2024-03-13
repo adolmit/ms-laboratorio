@@ -17,6 +17,7 @@ CREATE TABLE PESSOA_LABORATORIO (
     dt_fim DATE NOT NULL,
     propriedade_id INTEGER NOT NULL,
     laboratorio_id INTEGER NOT NULL,
+    observacoes VARCHAR(200) NOT NULL,
     estado VARCHAR(1) NOT NULL DEFAULT 'A'
 );
 
