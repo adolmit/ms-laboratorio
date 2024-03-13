@@ -1,4 +1,4 @@
-CREATE TABLE PROPIEDADE (
+CREATE TABLE PROPRIEDADE (
     id INTEGER PRIMARY KEY auto_increment,
     descricao VARCHAR(64) NOT NULL,
     estado VARCHAR(1) NOT NULL  DEFAULT 'A'
@@ -15,14 +15,14 @@ CREATE TABLE PESSOA_LABORATORIO (
     nome VARCHAR(64) NOT NULL,
     dt_inicio DATE NOT NULL,
     dt_fim DATE NOT NULL,
-    propiedade_id INTEGER NOT NULL,
+    propriedade_id INTEGER NOT NULL,
     laboratorio_id INTEGER NOT NULL,
     estado VARCHAR(1) NOT NULL DEFAULT 'A'
 );
 
 ALTER TABLE PESSOA_LABORATORIO
-    ADD FOREIGN KEY (propiedade_id)
-        REFERENCES PROPIEDADE(id);
+    ADD FOREIGN KEY (propriedade_id)
+        REFERENCES PROPRIEDADE(id);
 
 ALTER TABLE PESSOA_LABORATORIO
     ADD FOREIGN KEY (laboratorio_id)
